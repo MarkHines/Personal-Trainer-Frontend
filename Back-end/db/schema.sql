@@ -11,5 +11,6 @@ CREATE TABLE trainers (
   id SERIAL PRIMARY KEY,
   name text NOT NULL,
   img_url text NOT NULL, 
-  description text NOT NULL
+  description text NOT NULL,
+  bio text NOT NULL
 );

@@ -1,6 +1,7 @@
 import db from "#db/client";
 import { createUser } from "#db/queries/users";
 import { createTrainer } from "#db/queries/trainers";
+import { faker } from "@faker-js/faker";
 
 await db.connect();
 await seed();
@@ -12,17 +13,21 @@ async function seed() {
   
   const gbst = await createTrainer(`Mr. Plate Banger`, 
     `http://localhost:3000/images/trainer_image.jpg`,
-  `Over Train, Under Complain! Plates and MORE PLATES!!`);
+    `Over Train, Under Complain! Plates and MORE PLATES!!`,
+    faker.lorem.sentences(3));
 
   const qui = await createTrainer(`BIG Qui`,
     `http://localhost:3000/images/qui.jpg`,
-    `Scientific Focus, but the science says TRAIN HARD!!`);
+    `Scientific Focus, but the science says TRAIN HARD!!`,
+    faker.lorem.sentences(3));
   
   const fitFilm = await createTrainer(`The FIT Film Maker`,
     `http://localhost:3000/images/fit_film.JPG`,
-    `Sports & Fitness Instruction: Faith, Fitness, Family`);
+    `Sports & Fitness Instruction: Faith, Fitness, Family`,
+    faker.lorem.sentences(3));
 
   const theOx = await createTrainer(`BIG MACK`,
     `http://localhost:3000/images/the_ox.JPG`,
-    `Powerlifter at heart, athlete by design — strength with purpose`);
+    `Powerlifter at heart, athlete by design — strength with purpose`,
+    faker.lorem.sentences(3));
 }
