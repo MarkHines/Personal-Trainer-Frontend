@@ -12,6 +12,8 @@ const TrainerById = () => {
       <h1>Trainer Details</h1>
       <h2>{trainer.name}</h2>
       <img src={trainer.img_url} />
+      <h3>About {trainer.name}</h3>
+      <p>{trainer.bio}</p>
     </section>
   );
 };
