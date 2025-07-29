@@ -1,0 +1,1 @@
+# Developing a comprehensive fitness platform enabling users to connect with personal trainers, view customized trainin gprograms, and track progress, solving the problem of fragmented fitness management. Built full-stack application using React, Node.js, Express, and PostgreSQL with user authentication.
