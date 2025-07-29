@@ -17,3 +17,12 @@ export const getAllTrainers = async () => {
   const { rows: trainers } = await db.query(sql);
   return trainers
 }
+
+export const getTrainerById = async (id) => {
+  const sql = `
+    SELECT * FROM trainers
+    WHERE id = $1
+  `;
+  const { rows: [trainer] } = await db.query(sql, [id] );
+  return trainer;
+}

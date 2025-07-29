@@ -1,9 +1,13 @@
 import useQuery from '/src/api/useQuery';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import TrainerById from './TrainerById';
 
 const Trainers = () => {
   const { data: trainers } = useQuery(`/trainers`, `trainers`);
   const [ selectedTrainer, setSelectedTrainer ] = useState();
+  const navigate = useNavigate();
+
   const eventHandler = (event, trainer) => {
     event.preventDefault();
     setSelectedTrainer(trainer);
@@ -37,12 +41,12 @@ const Trainers = () => {
           selectedTrainer ? (
             <section>
               <p>{selectedTrainer.description}</p>
-              <button>Select Trainer</button>
+              <button onClick={(event) => {navigate(`/trainers/${selectedTrainer.id}`)}}>Select Trainer</button>
             </section>
           ) : ( 
-            <>
+            <section className='trainerHighlight'>
               <p>Please Select a Trainer</p>
-            </>
+            </section>
           )
         }
       </section>
