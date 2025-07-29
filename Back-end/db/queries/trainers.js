@@ -1,0 +1,19 @@
+import db from "#db/client";
+
+export const createTrainer = async (name, imgUrl, description) => {
+  const sql = `
+    INSERT INTO trainers (name, img_url, description)
+    VALUES ($1, $2, $3)
+    RETURNING *;
+  `;
+  const { rows: [trainer] } = await db.query(sql, [name, imgUrl, description]);
+  return trainer
+}
+
+export const getAllTrainers = async () => {
+  const sql = `
+    SELECT * FROM trainers;
+  `;
+  const { rows: trainers } = await db.query(sql);
+  return trainers
+}
