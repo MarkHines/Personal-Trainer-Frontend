@@ -1,7 +1,6 @@
 import useQuery from '/src/api/useQuery';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import TrainerById from './TrainerById';
 
 const Trainers = () => {
   const { data: trainers } = useQuery(`/trainers`, `trainers`);
