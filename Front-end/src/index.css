@@ -43,3 +43,15 @@ img {
   height: 30vh;
   font-size: 20px;
 }
+
+/* .trainerDetails {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  align-items: center;
+} */
+
+.trainerDetails img {
+  border-radius: 0;
+  width: 250px;
+}
