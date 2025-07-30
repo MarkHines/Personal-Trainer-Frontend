@@ -11,7 +11,7 @@ const Programs = ({ trainer }) => {
       {
         programs && programs.map((program) => {
           return (
-            <Link key={program.id}>
+            <Link to={`/programs/${program.id}`} key={program.id}>
               {program.name}
             </Link>
           )

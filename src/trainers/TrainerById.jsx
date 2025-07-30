@@ -1,5 +1,5 @@
 import useQuery from "../api/useQuery";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import Programs from "../programs/Programs";
 
 
@@ -9,6 +9,7 @@ const TrainerById = () => {
   if(!trainer) return null;
   return (
       <>
+        <Link to={`/trainers`}>Go Back</Link>
         <h1>Trainer Details</h1>
         <section className="trainerDetails">
           <h2>{trainer.name}</h2>
